@@ -1,10 +1,14 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package FunctionsPkg;
 
 import java.util.Scanner;
-//import javax.swing.JOptionPane;
 
-public class Menu1 {
+
+public class Main1 {
     
     public static boolean login(String user, String password)
     {   
@@ -20,16 +24,12 @@ public class Menu1 {
             System.out.println();
     }
     
-                                            //No se pa que es throws pero se agrego automaticamente cuando agregré
-                                           //el thread.sleep() tengo que investigar
-    public static void main(String[] args) throws InterruptedException {
-       
+    public static void main(String[] args){
         Scanner keyboard = new Scanner(System.in);
         ValidF _validF = new ValidF();//objeto de la clase para validar flotantes
-        String user,password,key;
-        int attempts = 0;
-        
-        
+        String user,password;
+        int attempts = 0,option;
+       
         do{
            System.out.print("\n\n\t\t Inicio Sesion");
            System.out.print("\t\n Usuario: ");
@@ -47,36 +47,28 @@ public class Menu1 {
            }
 
         }while(attempts != 3 && !login(user,password));
-       
-       clear(18);
-       do{
-            //keyboard.nextLine();//limpiar scanner
-            do{
-                
-
-                //Solo he implementado tres opciones
-                System.out.print("\n\t\t Menu \n\n");
-                System.out.print("\n\t Factorial de un numero -> F");
-                System.out.print("\n\t MCM y MCD de 3 nuemros -> M");
-                System.out.print("\n\t Primos y Compuestos -> P");
-                System.out.print("\n\t Ecuacion de 2do grado -> E");
-                System.out.print("\n\n Ingrese la letra correspondiente a la opcion: ");
-                key = keyboard.nextLine();
-           
-                //convertir en mayuscula si la letra ingresada es miniscula
-                key = key.toUpperCase();
-           
-                //.charAt() devuelve el caracter que le pedimos por parametro
-                if (key.charAt(0) != 'F' && key.charAt(0) != 'M' && key.charAt(0) != 'P' && key.charAt(0) != 'E') {
-                    System.out.print("\n\n Opcion invalida intente de nuevo");
-                    Thread.sleep(2000);//toma una espera de 2 segundos
-                    clear(20);
-                }
-            }while(key.charAt(0) != 'F' && key.charAt(0) != 'M' && key.charAt(0) != 'P' && key.charAt(0) != 'E');
-       
-            switch(key.charAt(0))
+        
+        do
+        {
+            //Solo he implementado tres opciones
+            System.out.print("\n\t\t Menu \n\n");
+            System.out.print("\n\t 1. Factorial de un numero");
+            System.out.print("\n\t 2. MCM y MCD de 3 nuemros");
+            System.out.print("\n\t 3. Primos y Compuestos");
+            System.out.print("\n\t 4. Ecuacion de 2do grado");
+            System.out.print("\n\n Ingrese el numero correspondiente a la opcion: ");
+            option = (int) _validF.validate();
+            
+            if (option < 1 || option > 6)
             {
-                case 'F':
+                System.out.println("\n Opcion invalida intente de nuevo");
+                clear(20);
+            }
+        }while(option < 1 || option > 6);
+        /*
+        switch(option)
+            {
+                case 1:
                     
                     long num;
                     clear(10);
@@ -106,7 +98,7 @@ public class Menu1 {
                     for (int i = 0; i < 3; i++)
                     {
                         System.out.print("\n Numero " + (i+1) + ": ");
-                        numbers[i] = (int) _validF.validate();
+                        numbers[i] = _validInt.validate();
                        //numbersAux[i] = numbers[i];
                     }
                     
@@ -135,20 +127,7 @@ public class Menu1 {
                     c = _validF.validate();
                     QuadraticEc ecuation = new QuadraticEc(a,b,c);
                     ecuation.process();
-            }        
-            
-            
-            System.out.println("\n\n Desea volver al menu?");
-            System.out.println("\n Si -> S");
-            System.out.println(" No -> Otro Caracter");
-            System.out.print("\n Ingrese: ");
-            
-            key = keyboard.nextLine();
-            //convertir en mayuscula si la letra ingresada es miniscula
-            key = key.toUpperCase();
-            
-       }while(key.charAt(0) == 'S');
-       
-        System.out.println("\n\n\nazucar");  
+            }*/
     }
+    
 }
