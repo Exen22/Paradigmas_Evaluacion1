@@ -1,9 +1,9 @@
-package FuncionesPkg;
+package FunctionsPkg;
 
 //import java.io.IOException;
 import java.util.Scanner;
 
-public class Funciones {
+public class Funciones_NoUsar_VersionVieja {
     
     //1 FACTORIAL
     public int Factorial(int n){
