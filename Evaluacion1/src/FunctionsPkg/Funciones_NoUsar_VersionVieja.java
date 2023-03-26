@@ -132,9 +132,11 @@ public class Funciones_NoUsar_VersionVieja {
     
     //5 DESGLOSE DE BILLETE
     public double Cajero(double monto){
+        
         int[]billetes={500,200,100,50,20,10};
         double[]monedas ={5.0, 2.0, 1.0, 0.5};      
         System.out.println("Desglose de "+monto+ ":");
+        
         for (int i=0; i<billetes.length;i++){ 
         int numbilletes =(int)(monto / billetes[i]);
         if(numbilletes>0){ 

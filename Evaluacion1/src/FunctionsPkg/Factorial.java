@@ -8,7 +8,7 @@ public class Factorial {
         num = _num;
     }
     
-    public void process()//getter
+    public void process()//setter
     {  
         long aux = 1;
        for (int i = 1; i<= num;i++)
@@ -19,7 +19,7 @@ public class Factorial {
        num = aux;
     }
     
-    public long show()//setter
+    public long show()//getter
     {
          return num;
     }

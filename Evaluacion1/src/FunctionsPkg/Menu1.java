@@ -8,7 +8,7 @@ package FunctionsPkg;
 import java.util.Scanner;
 
 
-public class Main1 {
+public class Menu1{
     
     public static boolean login(String user, String password)
     {   
