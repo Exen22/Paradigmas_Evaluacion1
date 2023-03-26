@@ -1,4 +1,13 @@
+<<<<<<< HEAD:Evaluacion1/src/FunctionsPkg/ValidF.java
 package FunctionsPkg;
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package FuncionesPkg;
+>>>>>>> main:Evaluacion1/src/FuncionesPkg/ValidF.java
 
 import java.util.Scanner;
 
