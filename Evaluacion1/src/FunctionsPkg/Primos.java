@@ -33,11 +33,11 @@ public class Primos {
             //contador
             if(cont==2 || cont == 1){
                 n_primos++;
-                System.out.println("Es primo");
+                System.out.println(" Es primo");
             }
             else if(cont > 2){
                 n_compuestos++;
-                System.out.println("Es compuesto");
+                System.out.println(" Es compuesto");
             }
             cont = 0;
             

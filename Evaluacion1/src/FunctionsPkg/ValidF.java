@@ -9,7 +9,6 @@ public class ValidF {
         
 	int i = 0,cont = 0,contN = 0;
 
-	//acabo de notar que un bucle for era lo mismo
 	while(i < number.length()){
                     
             //valida la primera posicion para saber si es negativo

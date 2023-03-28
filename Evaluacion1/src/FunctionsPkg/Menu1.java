@@ -29,6 +29,7 @@ public class Menu1{
         ValidF _validF = new ValidF();//objeto de la clase para validar flotantes
         String user,password;
         int attempts = 0,option;
+        boolean band;
        
         do{
            System.out.print("\n\n\t\t Inicio Sesion");
@@ -48,39 +49,48 @@ public class Menu1{
 
         }while(attempts != 3 && !login(user,password));
         
-        do
-        {
+        do{
+            clear(30);
+            band = false;
             //Solo he implementado tres opciones
             System.out.print("\n\t\t Menu \n\n");
             System.out.print("\n\t 1. Factorial de un numero");
             System.out.print("\n\t 2. MCM y MCD de 3 nuemros");
             System.out.print("\n\t 3. Primos y Compuestos");
             System.out.print("\n\t 4. Ecuacion de 2do grado");
+            System.out.print("\n\t 5. Desglosar monto en billetes");
+            System.out.print("\n\t 6. Menu Pilas (Coming Soon)");
+            System.out.print("\n\t Otro. Salir del programa");
             System.out.print("\n\n Ingrese el numero correspondiente a la opcion: ");
             option = (int) _validF.validate();
             
+           /* 
+            * Ya no usare este if
             if (option < 1 || option > 6)
             {
                 System.out.println("\n Opcion invalida intente de nuevo");
                 clear(20);
             }
-        }while(option < 1 || option > 6);
-        /*
-        switch(option)
-            {
-                case 1:
+            */
+        //}while(option < 1 || option > 6);
+        
+        
+            switch(option)
+                {
+                    case 1:
                     
-                    long num;
-                    clear(10);
-                    do{
+                        long num;
+                        clear(10);
                         System.out.print("\n\n\t Factorial de un numero \n\n");
-                        System.out.print("\n\n Ingrese un numero: ");
-                        num = (int) _validF.validate();
+                        do{
                         
-                        if (num < 0)
-                            System.out.println("\n Es imposible calcular el factorial de un numero negativo. Intente de nuevo");
+                            System.out.print("\n\n Ingrese un numero: ");
+                            num = (int) _validF.validate();
                         
-                    }while(num < 0);
+                            if (num < 0)
+                                System.out.println("\n Es imposible calcular el factorial de un numero negativo. Intente de nuevo");
+                        
+                        }while(num < 0);
                     
                     Factorial F = new Factorial(num);
                     F.process();
@@ -88,46 +98,101 @@ public class Menu1{
                    
                     break;
                
-                case 'M':
-                    int []numbers = new int[3];
+                    case 2:
+                        
+                        clear(10);
+                        int []numbers = new int[3];
                
                
-                    System.out.print("\n\n\n\n\t MCM y MCD de 3 numueros\n\n");
-                    System.out.print("\n\n Ingrese los numeros \n\n");
+                        System.out.print("\n\n\n\n\t MCM y MCD de 3 numueros\n\n");
+                        System.out.print("\n\n Ingrese los numeros \n\n");
                
-                    for (int i = 0; i < 3; i++)
-                    {
-                        System.out.print("\n Numero " + (i+1) + ": ");
-                        numbers[i] = _validInt.validate();
-                       //numbersAux[i] = numbers[i];
-                    }
+                        for (int i = 0; i < 3; i++)
+                        {
+                            System.out.print("\n Numero " + (i+1) + ": ");
+                            numbers[i] = (int) _validF.validate();
+                            //numbersAux[i] = numbers[i];
+                        }
                     
-                    McmandMcd mcmAndmcd = new McmandMcd(numbers);
+                        McmandMcd mcmAndmcd = new McmandMcd(numbers);
                     
-                    System.out.print("\n\n El M.C.M es: " + mcmAndmcd.mcm() );
-                    System.out.print("\n El M.C.D es: " + mcmAndmcd.mcd());
+                        System.out.print("\n\n El M.C.M es: " + mcmAndmcd.mcm() );
+                        System.out.print("\n El M.C.D es: " + mcmAndmcd.mcd());
                     
-                    break;
+                        break;
                     
-                case 'P':
-                    System.out.println("\n\n Numeros Primos y Compuestos \n\n");
-                    Primos _primo = new Primos(2);
-                    _primo.process();
-                    break;
+                    case 3:
+                        
+                        clear(10);
+                        System.out.println("\n\n Numeros Primos y Compuestos \n\n");
+                        Primos _primo = new Primos(2);//se le asigna 2 solo para inicializar 
+                        _primo.process();
+                        break;
                     
-                case 'E':
-                    
-                    double a,b,c;
-                    System.out.println("\n\n Ecuacion cuadratica \n");
-                    System.out.print("\n Ingrese el valor de a: ");
-                    a = _validF.validate();
-                    System.out.print("\n Ingrese el valor de b: ");
-                    b = _validF.validate();
-                    System.out.print("\n Ingrese el valor de c: ");
-                    c = _validF.validate();
-                    QuadraticEc ecuation = new QuadraticEc(a,b,c);
-                    ecuation.process();
-            }*/
+                    case 4:
+                        
+                        clear(10);
+                        double a,b,c;
+                        System.out.println("\n\n Ecuacion cuadratica \n");
+                        
+                        do
+                        {
+                             System.out.print("\n Ingrese el valor de a: ");
+                            a = _validF.validate();
+                            if (a == 0)
+                                System.out.println("\n a no puede ser 0\n\n");
+                        }while(a == 0);
+                        
+                        do
+                        { 
+                            System.out.print("\n Ingrese el valor de b: ");
+                            b = _validF.validate();
+                            if (b == 0)
+                                System.out.println("\n b no puede ser 0\n\n");
+                        }while(b == 0);
+                        
+                        
+                        System.out.print("\n Ingrese el valor de c: ");
+                        c = _validF.validate();
+                        
+                        QuadraticEc ecuation = new QuadraticEc(a,b,c);
+                        ecuation.process();
+                        break;
+                        
+                    case 5:
+                        
+                        clear(10);
+                        System.out.println("\n\t Desglosar monto en billetes\n\n");
+                        System.out.print("\n Ingrese el monto: ");
+                        option = (int) _validF.validate();
+                        Cajero convert = new Cajero(option);
+                        convert.desgloseMonto();
+                        convert.show();
+                        break;
+                    case 6: 
+                        System.out.println("\n\n No ta listo c:\n\n\n");
+                    default:
+                        band = true;
+                        clear(5);
+                        System.out.println("\t Seguro que quiere salir? ");
+                        System.out.print("\n\t 0. Cancelar");
+                        System.out.print("\n\t Otro. Confirmar: ");
+                         System.out.print("\n\n\t Ingrese: ");
+                        option = (int) _validF.validate();
+                }
+            
+            
+            if (!band)
+            {
+                clear(4);
+                System.out.println("\t Desea salir?");
+                System.out.print("\n\t 0. Volver al Menu");
+                System.out.print("\n\t Otro. Salir");
+                System.out.print("\n\n\t Ingrese: ");
+                option = (int) _validF.validate();
+            }
+            
+        }while(option == 0);    
     }
     
 }

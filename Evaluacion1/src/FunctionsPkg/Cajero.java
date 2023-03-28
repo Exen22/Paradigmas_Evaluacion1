@@ -27,8 +27,8 @@ public class Cajero {
     }
     
     public void show(){//getter
-        System.out.println("El desglose del monto '"+monto+"' Es: ");
-        System.out.println("Billetes de 100: "+b100+"\nBilletes de 50: "+b50+"\nBilletes de 20: "+b20+
-        "\nBilletes de 10: "+b10+"\nBilletes de 5: "+b5+"\nBilletes de 2: "+b2+"\nBilletes de 1: "+b1);
+        System.out.println("\n El desglose del monto '"+monto+"' Es: \n");
+        System.out.println(" Billetes de 100: "+b100+"\n Billetes de 50: "+b50+"\n Billetes de 20: "+b20+
+        "\n Billetes de 10: "+b10+"\n Billetes de 5: "+b5+"\n Billetes de 2: "+b2+"\n Billetes de 1: "+b1);
     }
 }
