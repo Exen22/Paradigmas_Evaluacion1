@@ -27,6 +27,7 @@ public class Menu1{
     public static void main(String[] args){
         Scanner keyboard = new Scanner(System.in);
         ValidF _validF = new ValidF();//objeto de la clase para validar flotantes
+        MenuPila menupila = new MenuPila();//objeto para entrar al menu de pila
         String user,password;
         int attempts = 0,option;
         boolean band;
@@ -59,22 +60,12 @@ public class Menu1{
             System.out.print("\n\t 3. Primos y Compuestos");
             System.out.print("\n\t 4. Ecuacion de 2do grado");
             System.out.print("\n\t 5. Desglosar monto en billetes");
-            System.out.print("\n\t 6. Menu Pilas (Coming Soon)");
+            System.out.print("\n\t 6. Menu Pilas");
             System.out.print("\n\t Otro. Salir del programa");
             System.out.print("\n\n Ingrese el numero correspondiente a la opcion: ");
             option = (int) _validF.validate();
+
             
-           /* 
-            * Ya no usare este if
-            if (option < 1 || option > 6)
-            {
-                System.out.println("\n Opcion invalida intente de nuevo");
-                clear(20);
-            }
-            */
-        //}while(option < 1 || option > 6);
-        
-        
             switch(option)
                 {
                     case 1:
@@ -169,8 +160,10 @@ public class Menu1{
                         convert.desgloseMonto();
                         convert.show();
                         break;
-                    case 6: 
-                        System.out.println("\n\n No ta listo c:\n\n\n");
+                    case 6:
+                        clear(20);
+                        menupila.mainPila();
+                        break;
                     default:
                         band = true;
                         clear(5);
