@@ -1,21 +1,21 @@
-package FunctionsPkg;
+package Pruebas_BorrarAlTerminar;
 
-public class Cajero {
+
+public class CajeroV2 {
 
     private final int dinero;
-    private int max, cont = 0, total = 0;
+    private int max, cont = 0;
+    private double total = 0;
     private final int[] billetes= {100,50,20,10,5,2,1};
     private int b100 = 0, b50 = 0, b20 = 0, b10 = 0, b5 = 0, b2 = 0, b1 = 0;
     
-    public Cajero(int _dinero){//Constructor
+    public CajeroV2(int _dinero){//Constructor
         this.dinero = _dinero;
     }
     
     public void desgloseMonto(){//setter
         
         int din = dinero;
-        
-        //Bucle de randomizado
         for(int i=0; i<billetes.length; i++){
             
             
