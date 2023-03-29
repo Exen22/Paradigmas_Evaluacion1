@@ -2,15 +2,18 @@ package FunctionsPkg;
 
 import java.util.Scanner;
 
-public class ValidF {
+public class ValidF<T> {
     
     //compara que solo haya numeros
     private boolean hasAcharF(String number){
         
 	int i = 0,cont = 0,contN = 0;
-
+        
+        if (number.isEmpty())
+            return true;
+        
 	while(i < number.length()){
-                    
+            
             //valida la primera posicion para saber si es negativo
             if (number.charAt(0) == '-' && contN < 1){
                 i++; contN++;
@@ -24,7 +27,7 @@ public class ValidF {
             }
                     
             //comparamos que sean numeros haciendo uso del codigo ascii
-            if((number.charAt(i) < '0' || number.charAt(i) > '9'))
+            if((number.charAt(i) < '0' || number.charAt(i) > '9') )
                 return true;
 			
 		i++;

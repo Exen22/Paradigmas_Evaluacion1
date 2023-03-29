@@ -30,7 +30,7 @@ public class Cajero {
                 max = cont;
                
                 int pos = (int)(Math.random()*(max+1));
-                int rest =billetes[i+pos];
+                int rest = billetes[i+pos];
                 
                 
                 //Contador de cada billete

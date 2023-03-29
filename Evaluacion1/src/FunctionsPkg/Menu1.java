@@ -177,7 +177,7 @@ public class Menu1{
             
             if (!band)
             {
-                System.out.println("Pulse una tecla para continuar: ");
+                System.out.println("\n\n Pulse una tecla para continuar: ");
                 keyboard.nextLine();
                 clear(4);
                 System.out.println("\t Desea salir?");
