@@ -53,7 +53,7 @@ public class Menu1{
         do{
             clear(30);
             band = false;
-            //Solo he implementado tres opciones
+            
             System.out.print("\n\t\t Menu \n\n");
             System.out.print("\n\t 1. Factorial de un numero");
             System.out.print("\n\t 2. MCM y MCD de 3 nuemros");
@@ -177,6 +177,8 @@ public class Menu1{
             
             if (!band)
             {
+                System.out.println("Pulse una tecla para continuar: ");
+                keyboard.nextLine();
                 clear(4);
                 System.out.println("\t Desea salir?");
                 System.out.print("\n\t 0. Volver al Menu");
